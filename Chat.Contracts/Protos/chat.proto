@@ -1,0 +1,18 @@
+syntax = "proto3";
+package chat;
+option csharp_namespace = "Chat.Contracts";
+
+service Chat {
+
+  rpc SendMessage(MessageRequest) returns (MessageReply);
+}
+
+message MessageRequest {
+	string text = 1;
+	string sender = 2;
+}
+
+message MessageReply {
+	bool received = 1;
+	bool read = 2;
+}
